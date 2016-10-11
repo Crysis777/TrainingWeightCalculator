@@ -18,9 +18,22 @@ public class InsertData extends AppCompatActivity {
     }
 
     public void calculate(View view) {
-        EditText wEdit = (EditText) findViewById(R.id.editText);
+        EditText wEdit   = (EditText)findViewById(R.id.editText);
+        EditText rEdit   = (EditText)findViewById(R.id.editText2);
 
+        if(wEdit.getText().length() == 0 || rEdit.getText().length() == 0) {
+            Toast.makeText(this, "Please insert a value.", Toast.LENGTH_SHORT).show();
+            return;
+        }
 
+        if(Integer.parseInt(wEdit.getText().toString()) <= 0 || Integer.parseInt(rEdit.getText().toString()) <= 0){
+            Toast.makeText(this, "Please only insert values greater than zero.", Toast.LENGTH_LONG).show();
+            return;
+        }
 
+        if(Integer.parseInt(wEdit.getText().toString()) >= 5000 || Integer.parseInt(rEdit.getText().toString()) >= 30){
+            Toast.makeText(this, "Weight must be less than 5000, Reputation less than 30.", Toast.LENGTH_LONG).show();
+            return;
+        }
     }
 }
