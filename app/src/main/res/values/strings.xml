@@ -64,4 +64,5 @@
     <string name="weight">Weight</string>
     <string name="repetitions">Repetitions</string>
     <string name="calculate_button">Calculate</string>
+    <string name="your_1rm_is">Your 1RM is</string>
 </resources>

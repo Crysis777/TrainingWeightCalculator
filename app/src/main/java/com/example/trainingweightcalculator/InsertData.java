@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Toast;
 
 public class InsertData extends AppCompatActivity {
@@ -17,6 +18,9 @@ public class InsertData extends AppCompatActivity {
     }
 
     public void calculate(View view) {
-        Toast.makeText(this, "This device got toasted", Toast.LENGTH_SHORT).show();
+        EditText wEdit = (EditText) findViewById(R.id.editText);
+
+
+
     }
 }
