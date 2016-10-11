@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Toast;
 
 public class InsertData extends AppCompatActivity {
@@ -17,6 +18,22 @@ public class InsertData extends AppCompatActivity {
     }
 
     public void calculate(View view) {
-        Toast.makeText(this, "This device got toasted", Toast.LENGTH_SHORT).show();
+        EditText wEdit   = (EditText)findViewById(R.id.editText);
+        EditText rEdit   = (EditText)findViewById(R.id.editText2);
+
+        if(wEdit.getText().length() == 0 || rEdit.getText().length() == 0) {
+            Toast.makeText(this, "Please insert a value.", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        if(Integer.parseInt(wEdit.getText().toString()) <= 0 || Integer.parseInt(rEdit.getText().toString()) <= 0){
+            Toast.makeText(this, "Please only insert values greater than zero.", Toast.LENGTH_LONG).show();
+            return;
+        }
+
+        if(Integer.parseInt(wEdit.getText().toString()) >= 5000 || Integer.parseInt(rEdit.getText().toString()) >= 30){
+            Toast.makeText(this, "Weight must be less than 5000, Reputation less than 30.", Toast.LENGTH_LONG).show();
+            return;
+        }
     }
 }
