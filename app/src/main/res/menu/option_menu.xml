@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/menu_option_hilfe"
+        android:title="Help"
+        android:icon="@android:drawable/ic_menu_help"/>
+    <item android:id="@+id/menu_option_reset"
+        android:title="Reset"
+        android:icon="@android:drawable/ic_menu_delete"/>
+</menu>

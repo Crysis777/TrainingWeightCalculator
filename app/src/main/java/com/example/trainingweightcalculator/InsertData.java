@@ -5,6 +5,9 @@ import android.icu.text.DecimalFormat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -19,12 +22,34 @@ public class InsertData extends AppCompatActivity {
 
     }
 
-    public void help(View view) {
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.option_menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle item selection
+        switch (item.getItemId()) {
+            case R.id.menu_option_hilfe:
+                help();
+                return true;
+            case R.id.menu_option_reset:
+                reset();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
+
+    public void help() {
         Intent i = new Intent(getApplicationContext(), HelpActivity.class);
         startActivity(i);
     }
 
-    public void reset(View view) {
+    public void reset() {
         EditText wEdit  = (EditText)findViewById(R.id.editText);
         EditText rEdit  = (EditText)findViewById(R.id.editText2);
 
