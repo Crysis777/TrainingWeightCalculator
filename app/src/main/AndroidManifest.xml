@@ -15,10 +15,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".HelpActivity"
-            android:label="@string/title_activity_settings"></activity>
-        <activity android:name=".ResultActivity"></activity>
+        <activity android:name=".ResultActivity" />
+        <activity android:name=".HelpActivity"></activity>
     </application>
 
 </manifest>
