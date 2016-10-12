@@ -65,4 +65,8 @@
     <string name="repetitions">Repetitions</string>
     <string name="calculate_button">Calculate</string>
     <string name="your_1rm_is">Your 1RM is</string>
+    <string name="reset">Reset</string>
+    <string name="help">Help</string>
+
+    <string name="helptext">This calculator is used to determine the with which one can perform one solid repetition and not a single one more.</string>
 </resources>

@@ -1,5 +1,7 @@
 package com.example.trainingweightcalculator;
 
+import android.content.Intent;
+import android.icu.text.DecimalFormat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -17,9 +19,22 @@ public class InsertData extends AppCompatActivity {
 
     }
 
+    public void help(View view) {
+        Intent i = new Intent(getApplicationContext(), HelpActivity.class);
+        startActivity(i);
+    }
+
+    public void reset(View view) {
+        EditText wEdit  = (EditText)findViewById(R.id.editText);
+        EditText rEdit  = (EditText)findViewById(R.id.editText2);
+
+        wEdit.setText("");
+        rEdit.setText("");
+    }
+
     public void calculate(View view) {
-        EditText wEdit   = (EditText)findViewById(R.id.editText);
-        EditText rEdit   = (EditText)findViewById(R.id.editText2);
+        EditText wEdit  = (EditText)findViewById(R.id.editText);
+        EditText rEdit  = (EditText)findViewById(R.id.editText2);
 
         if(wEdit.getText().length() == 0 || rEdit.getText().length() == 0) {
             Toast.makeText(this, "Please insert a value.", Toast.LENGTH_SHORT).show();
@@ -35,5 +50,18 @@ public class InsertData extends AppCompatActivity {
             Toast.makeText(this, "Weight must be less than 5000, Reputation less than 30.", Toast.LENGTH_LONG).show();
             return;
         }
+
+        //wt. x reps x .0333 + wt.
+        double RMcalc = Double.parseDouble(wEdit.getText().toString()) * Double.parseDouble(rEdit.getText().toString()) * 0.0333 + Double.parseDouble(wEdit.getText().toString());
+        double RMround = Math.round(RMcalc * 100.0) / 100.0;
+
+
+        Intent i = new Intent(getApplicationContext(), ResultActivity.class);
+
+        i.putExtra("RM", String.valueOf(RMround));
+        i.putExtra("Weight", String.valueOf(wEdit.getText()));
+        i.putExtra("Repetitions", String.valueOf(rEdit.getText()));
+
+        startActivity(i);
     }
 }
