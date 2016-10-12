@@ -33,7 +33,7 @@ public class ResultActivity extends AppCompatActivity {
         wView.setText(W);
         rView.setText(R);
 
-        Log.i(LOGTAG, "Information successfully transfered.")
+        Log.i(LOGTAG, "Information successfully transfered.");
     }
 
     @Override
