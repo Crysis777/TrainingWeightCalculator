@@ -12,6 +12,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class ResultActivity extends AppCompatActivity {
+    public static final String LOGTAG = "ResultLog";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +32,8 @@ public class ResultActivity extends AppCompatActivity {
         rmView.setText(RM);
         wView.setText(W);
         rView.setText(R);
+
+        Log.i(LOGTAG, "Information successfully transfered.")
     }
 
     @Override
@@ -38,6 +41,8 @@ public class ResultActivity extends AppCompatActivity {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.option_menu, menu);
         menu.findItem(R.id.menu_option_reset).setVisible(false);
+
+        Log.i(LOGTAG, "Optionsmenu was created successfully.");
         return true;
     }
 
@@ -56,5 +61,7 @@ public class ResultActivity extends AppCompatActivity {
     public void help() {
         Intent i = new Intent(getApplicationContext(), HelpActivity.class);
         startActivity(i);
+
+        Log.i(LOGTAG, "Help Activity was displayed.");
     }
 }
