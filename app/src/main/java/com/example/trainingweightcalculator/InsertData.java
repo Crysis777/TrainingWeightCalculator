@@ -19,6 +19,19 @@ public class InsertData extends AppCompatActivity {
 
     }
 
+    public void help(View view) {
+        Intent i = new Intent(getApplicationContext(), HelpActivity.class);
+        startActivity(i);
+    }
+
+    public void reset(View view) {
+        EditText wEdit  = (EditText)findViewById(R.id.editText);
+        EditText rEdit  = (EditText)findViewById(R.id.editText2);
+
+        wEdit.setText("");
+        rEdit.setText("");
+    }
+
     public void calculate(View view) {
         EditText wEdit  = (EditText)findViewById(R.id.editText);
         EditText rEdit  = (EditText)findViewById(R.id.editText2);
@@ -46,6 +59,8 @@ public class InsertData extends AppCompatActivity {
         Intent i = new Intent(getApplicationContext(), ResultActivity.class);
 
         i.putExtra("RM", String.valueOf(RMround));
+        i.putExtra("Weight", String.valueOf(wEdit.getText()));
+        i.putExtra("Repetitions", String.valueOf(rEdit.getText()));
 
         startActivity(i);
     }

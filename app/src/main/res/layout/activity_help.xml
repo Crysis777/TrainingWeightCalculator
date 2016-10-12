@@ -9,4 +9,15 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.trainingweightcalculator.HelpActivity">
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/helptext"
+        android:id="@+id/textView8"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:textSize="40px"
+        android:textIsSelectable="false" />
 </RelativeLayout>
